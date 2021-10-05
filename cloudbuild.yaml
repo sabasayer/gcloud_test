@@ -1,4 +1,4 @@
-  steps:
+steps:
   # build the container
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--network=cloudbuild','-t', 'gcr.io/nuxt-328111/server', '.']
@@ -9,4 +9,4 @@
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['run', 'deploy', 'server', '--image', 'gcr.io/nuxt-328111/server', '--region', 'europe-central2', '--platform', 'managed', '--allow-unauthenticated']
 images:
-- 'gcr.io/nuxt-328111/server'
+  - 'gcr.io/nuxt-328111/server'
